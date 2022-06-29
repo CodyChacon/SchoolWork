@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+	double minSp, maxSp, ratio;
+	
+	cout << "Please type the minimum RPMs\n";
+	cin >> minSp;
+	
+	cout << "Please type the maximum RPMs\n";
+	cin >> maxSp;
+	
+	ratio = pow(maxSP / minSp, .2);
+	
+	cout << "The ratio between the two values is: " << ratio;
+	
+	return 0;
+}

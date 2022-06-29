@@ -1,0 +1,179 @@
+Module Main
+	Declare wages, hours, gross
+	
+	Display "Please enter your hourly wage."
+	Input wages
+	
+	If wages < 7.50 or wages > 18.25
+		while wages < 7.50 or wages > 18.25
+			Display "Please enter a correct hourly wage in the range of $7.50 to $18.25"
+			Input wages
+		End While
+	End If
+	
+	Display "Please enter the amount of hours you worked."
+	Input hours
+	
+	If hours < 0 or hours > 40
+		while hours < 0 or hours > 40
+			Display "Please enter an hourly wage in the proper range"
+			Input hours
+		End While
+	End If
+	
+	gross = hours * wages
+	
+	Display "Your gross pay for this period is $" & gross
+	
+End Main
+
+Module Main
+	Declare sectionA, sectionB, sectionC
+	
+	Display "How many tickets were sold in section A?"
+	Input sectionA
+	
+	If sectionA < 0 or sectionA > 300
+		While sectionA < 0 or sectionA > 300
+			Display "Please enter a ticket in the range of 0 to 300"
+			Input sectionA
+		End While
+	End If
+	
+	Display "How many tickets were sold in section B?"
+	Input sectionB
+	
+	If sectionB < 0 or sectionB > 300
+		While sectionB < 0 or sectionB > 500
+			Display "Please enter a ticket in the range of 0 to 500"
+			Input sectionB
+		End While
+	End If
+	
+	Display "How many tickets were sold in section C?"
+	Input sectionC
+	
+	If sectionC < 0 or sectionC > 200
+		While sectionC < 0 or sectionC > 200
+			Display "Please enter a ticket in the range of 0 to 200"
+			Input sectionC
+		End While
+	End If
+	
+	Display "The amount of money made from tickets sold is $" & (sectionA * 20) + (sectionB * 15) + (sectionC * 10)
+	
+End Main
+
+Module Main
+	Declare Integer speed, limit
+	
+	Display "What was the speed limit?"
+	Input limit
+	
+	If limit < 20 or limit > 70
+		While limit < 20 or limit > 70
+			Display "Please enter a valid speed limit"
+			Input limit
+		End While
+	End If
+	
+	Display "How fast were you going?"
+	Input speed
+	
+	If speed < 0
+		While speed < 0
+			Output "Please enter a valid speed."
+			Input speed
+		End While
+	End If
+	
+	If speed < limit
+		While speed < limit
+			Display "Please enter a valid speeding value."
+			Input speed
+		End While
+	End If
+	
+	Display "You were going " & speed - limit & " mph over the speed limit."
+	
+End Main
+
+Module Main
+	Declare String sign
+	Declare Integer rand
+	
+	Display "Please choose rock, paper, or scissors."
+	Input sign
+	
+	If sign != "rock" and sign != "paper" and sign != "scissors"
+		While sign != "rock" and sign != "paper" and sign != "scissors"
+			Display "Please choose a valid option between rock, paper, and scissors."
+			Input sign
+		End While
+	End If
+	
+	Declare rand = random(3) + 1
+	Call showSign(rand)
+	Call game(sign, rand)
+	
+End Main
+
+Module game(String sign, Integer rand)
+	If sign == "rock"
+		Call rock(rand)
+	End If
+	If sign == "paper"
+		Call paper(rand)
+	End If
+	If sign == "scissors"
+		Call scissors(rand)
+	End If
+End Game
+
+Module rock(Integer sign)
+	If sign == 1
+		Display "You tied!"
+	End If
+	If sign == 2
+		Display "You lost!"
+	End If
+	If sign == 3
+		Display "You won!"
+	End If
+End Rock
+
+Module paper(Integer sign)
+	If sign == 2
+		Display "You tied!"
+	End If
+	If sign == 3
+		Display "You lost!"
+	End If
+	If sign == 1
+		Display "You won!"
+	End If
+End Paper
+
+Module scissors(Integer sign)
+	If sign == 3
+		Display "You tied!"
+	End If
+	If sign == 1
+		Display "You lost!"
+	End If
+	If sign == 2
+		Display "You won!"
+	End If
+End Rock
+
+Module showSign(Integer sign)
+	If sign == 1
+		Display "Your opponent played rock!"
+	End If
+	If sign == 2
+		Display "Your opponent played paper!"
+	End If
+	If sign == 3
+		Display "Your opponent played scissors!"
+	End If
+	

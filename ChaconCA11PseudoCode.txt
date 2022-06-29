@@ -1,0 +1,234 @@
+Module Main
+	Declare Integer Array numbers[20]
+	Declare Integer smallest, largest, total
+	Declare Real average
+	
+	Display "Please enter 20 numbers to be sorted through."
+	
+	For i = 0 to i = 19
+		Input numbers[i]
+	End For
+	
+	Assign smallest = numbers[0]
+	Assign largest = numbers[0]
+	Assign total = numbers[0]
+	
+	For i = 1 to i = 19
+		If smallest > numbers[i]
+			Assign smallest = numbers[i]
+		End If
+		
+		If largest < numbers[i]
+			Assign largest = numbers[i]
+		End If
+		
+		Assign total += number[i]
+	End For
+	
+	Assign average = total / 20
+	
+	Display "The smallest number entered was: " & smallest
+	Display "The largest number entered was: " & largest
+	Display "The total numbers in the array were 20."
+	Display "The average of all the numbers entered was: " & average
+End Module
+
+Module Main
+	Declare Integer Array accNum[18] = 5658845,  4520125,  7895122,  8777541,  8451277,  1302850,
+		8080152,  4562555,  5552012,  5050552,  7825877,  1250255,
+		1005231,  6545231,  3852085,  7576651,  7881200,  4581002
+	Declare Boolean valid = false
+	Declare acc
+	
+	Display "Please enter a valid account number."
+	Input acc
+	
+	For i = 0 to i = 17
+		If accNum[i] == acc
+			Assign valid = true
+			Display "This is a valid account number."
+		End If
+	End For
+	
+	If valid == false
+		Display "This is not a valid account number."
+	End If
+End Main
+
+Declare Main
+	Declare Integer Array empId[7] = 56588  45201  78951  87775  84512  13028  75804
+	Declare Integer Array hours[7]
+	Declare Real Array payRate[7]
+	Declare Real Array wages[7]
+	
+	For i = 0 to i = 6
+		Display "Please enter the hours and pay rate for employee with ID of: " & empId[i]
+		Input hours[i]
+		Input payRate[i]
+		
+		Assign wages[i] = hours[i] * payRate[i]
+	End For
+	
+	
+	For i = 0 to i = 6
+		Display "Employee ID: " & empId[i]
+		Display "Hours: " & hours[i]
+		Display "Pay rate: " & payRate[i]
+		Display "Wages: " & wages[i]
+		New Line
+	End If
+End Module
+
+Module Main
+	Declare Character Array tictac[3][3]
+	Declare Boolean win = false
+	Declare Integer row, column
+	
+	For i = 0 to i = 2
+		For j = 0 to j = 2
+			Assign tictac[i][j] = '*'
+		End For
+	End For
+	
+	While win == false
+		For i = 0 to i = 2
+			Display tictac[i][0] & tictac[i][1] & tictac[i][2]
+		End For
+		
+		Display "Player 1: Enter a Row and Column for X's"
+			Input row, column
+			
+			Assign tictac[row][column] = 'X'
+			
+			For i = 0 to i = 2
+				Display tictac[i][0] & tictac[i][1] & tictac[i][2]
+				
+				For j = 0 to j = 2
+					If tactac[i][j] == 'X'
+						Assign counter = counter + 1
+					End If
+				End For
+				
+				If counter == 3
+					Assign win = true
+				Else
+					Assign counter = 0
+				End If
+			End For
+			
+			If win != true
+				For i = 0 to i = 2
+					For j = 0 to j = 2
+						If tactac[j][i] == 'X'
+							Assign counter = counter + 1
+						End If
+					End For
+					
+					If counter == 3
+						Assign win = true
+					Else
+						Assign counter = 0
+					End If
+				End For
+			End If
+			
+			If win != true
+				For i = 0 to i = 2
+					If tactac[i][i] == 'X'
+						Assign counter = counter + 1
+					End If
+				End For
+				If counter == 3
+					Assign win = true
+				Else
+					Assign counter = 0
+				End If
+			End If
+			
+			If win != true
+				For i = 0 to i = 2
+					If tactac[i][i % 2] == 'X'
+						Assign counter = counter + 1
+					End If
+				End For
+				If counter == 3
+					Assign win = true
+				Else
+					Assign counter = 0
+				End If
+			End If
+		
+		If win == false
+			Display "Player 2: Enter a Row and Column for O's"
+			Input row, column
+			
+			Assign tictac[row][column] = 'O'
+			
+			For i = 0 to i = 2
+				Display tictac[i][0] & tictac[i][1] & tictac[i][2]
+				
+				For j = 0 to j = 2
+					If tactac[i][j] == 'O'
+						Assign counter = counter + 1
+					End If
+				End For
+				
+				If counter == 3
+					Assign win = true
+				Else
+					Assign counter = 0
+				End If
+			End For
+			
+			If win != true
+				For i = 0 to i = 2
+					For j = 0 to j = 2
+						If tactac[j][i] == 'O'
+							Assign counter = counter + 1
+						End If
+					End For
+					
+					If counter == 3
+						Assign win = true
+					Else
+						Assign counter = 0
+					End If
+				End For
+			End If
+			
+			If win != true
+				For i = 0 to i = 2
+					If tactac[i][i] == 'O'
+						Assign counter = counter + 1
+					End If
+				End For
+				If counter == 3
+					Assign win = true
+				Else
+					Assign counter = 0
+				End If
+			End If
+			
+			If win != true
+				For i = 0 to i = 2
+					If tactac[i][i % 2] == 'O'
+						Assign counter = counter + 1
+					End If
+				End For
+				If counter == 3
+					Assign win = true
+				Else
+					Assign counter = 0
+				End If
+			End If
+		End If
+	End While
+End Module
+
+
+
+
+	
+	
+	
+		

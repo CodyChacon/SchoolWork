@@ -1,0 +1,111 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h> 
+#include <cmath>
+
+using namespace std;
+
+int main(){
+	int randomOne, randomTwo, answer;
+	
+	srand (time(NULL));
+	
+	cout << "Try to answer the following questions if you can. Type 0 or a negative number to end the program." << endl;
+	
+	while(answer > 0){
+		randomOne = rand() % 1000 + 1;
+		randomTwo = rand() % 1000 + 1;
+		
+		cout << "  " randomOne << endl;
+		cout << "+ " randomTwo << endl;
+		
+		cin >> answer;
+		
+		if(answer > 0){
+			if(answer == randomOne + randomTwo){
+				cout << "Good job! That was the correct answer.\n";
+			} else {
+				cout << "That is the wrong answer. The right answer is: " << randomOne + randomTwo << endl;
+			}
+		}
+	}
+	
+	return 0;
+}
+
+int main(){
+	double distance, g = 9.8;
+	int time;
+	
+	cout << "Please enter the amount of time an object falls for in seconds.";
+	
+	for(int i = 1; time; i++){
+		distance = .5 * g * (pow(time, 2));
+		
+		cout << "At " << i << " seconds the object has fallen " << distance << " meters.";
+	}
+	
+	return 0;
+}
+
+int main (){
+	int randomOne, counter = 0, odds = 0, evens = 0;
+	
+	srand (time(NULL));
+	
+	while(counter < 100){
+		randomOne = rand() % 1000 + 1;
+		counter++;
+		
+		if(randomOne % 2 == 0){
+			evens++;
+		} else {
+			odds++;
+		}
+	}
+	
+	cout << "There were " << evens << " even numbers and " << odds << " odd numbers.\n";
+	
+	return 0;
+}
+
+int main(){
+	int randomOne, choice;
+	
+	srand (time(NULL));
+	
+	cout << "Please choose 1 for rock, 2 for paper, and 3 for scissors.\n";
+	cin >> choice;
+	
+	randomOne = rand() % 3 + 1;
+	
+	if(choice == 1){
+		if(randomOne == 1){
+			cout << "Tie\n"
+		} else if (randomOne == 2){
+			cout << "Lose\n"
+		} else {
+			cout << "Win\n"
+		}
+	}
+	
+	if(choice == 2){
+		if(randomOne == 2){
+			cout << "Tie\n"
+		} else if (randomOne == 3){
+			cout << "Lose\n"
+		} else {
+			cout << "Win\n"
+		}
+	}
+	
+	if(choice == 3){
+		if(randomOne == 3){
+			cout << "Tie\n"
+		} else if (randomOne == 1){
+			cout << "Lose\n"
+		} else {
+			cout << "Win\n"
+		}
+	}
+}

@@ -1,0 +1,80 @@
+Module Main
+	Declare Integer bugs = 0, total = 0, count = 0
+	
+	While count < 7
+		Display "Please enter the amount of bugs you caught today."
+		Input bugs
+		
+		Set total += bugs;
+		Set count += 1;
+		
+	End While
+	
+	Display "You caught " & total & " bugs this week."
+	
+End
+
+Module Main
+	Declare Integer distance = 0, speed = 0, time = 0, count = 1
+	
+	Display "Please enter the speed of the vehicle."
+	Input speed
+	
+	Display "Please enter how many hours traveled."
+	Input time
+	
+	Set distance = speed * time
+	
+	For count to time
+		Display count & "            " & count * speed
+		
+	End For
+
+End
+
+Module Main
+	Declare Integer days, cents = 1, count
+	Declare Real dollars, total = 0
+	
+	Display "Please enter the amount of days you wish to calculate."
+	Input days
+	
+	For count = 1 to days
+		Set dollars = cents / 100
+	
+		Display "Day: " & count & "         $" & dollars
+		
+		Set cents *= 2
+		
+		total += dollars
+	
+	End For
+	
+	Display "The total amount made at the end of the period is $" & total
+	
+End
+
+Module Main
+	Declare String first, last, temp
+	
+	Display "Please enter a name to add to the list. (type 'quit' to finish the list)"
+	Input temp
+	
+	Set first = temp, last = temp
+	
+	While temp != "quit"
+		Display "Please enter another name to add to the list. (type 'quit' to finish the list)"
+		Input temp
+		
+		If temp < first
+			first = temp
+		Else if temp > last
+			last = temp
+		End If
+	End While
+	
+	Display "The first name alphabetically is " & first & " and the last name alphabetically is " & last
+	
+End
+		
+		

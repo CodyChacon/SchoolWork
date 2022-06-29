@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	double stateTax, countyTax, totalTax, sale;
+	
+	cout << "Please enter the amount of the sale."
+	cin >> sale;
+	
+	stateTax = sale * .04;
+	countyTax = sale * .02;
+	totalTax = countyTax + stateTax;
+	
+	
+	cout << "The state tax was : $" << stateTax << endl;
+	cout << "The county tax was : $" << countyTax << endl;
+	cout << "The total tax was : $" << stateTax << endl;
+	cout << "The total price of the sale was : $" << totalTax + sale << endl;
+	
+	return 0;
+}

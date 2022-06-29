@@ -1,0 +1,40 @@
+Module kiloConversion(Real kilos)
+	Declare Real form = 0.6214
+	
+	Display kilos & " kilometers is " & kilos * form & " miles."
+	
+End
+
+Module insurance(Real cost)
+	Display "The minimum amount of insurance you should buy for the property is $" & cost * .8
+	
+End
+
+Module BMI(Integer weight, Integer height)
+	Declare Integer BMI
+	
+	Set BMI = weight * 703 / (height * height)
+	
+	Display "Your BMI is "  & BMI
+	
+End
+
+Module taxReport(Real sales)
+	Declare Real county = .02, state = .04
+	
+	Display "The county sales tax is $" & sales * county
+	Display "The state sales tax is $" & sales * state
+	Display "The total sales tax is $" & (sales * county) + (sales * state)
+	
+End
+
+Module main
+	// Simply examples
+	kiloConversion(150)
+	insurance(375)
+	BMI(120, 60)
+	taxReport(700)
+	
+End
+	
+	

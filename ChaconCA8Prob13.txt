@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	double sugar = 1.5, butter = 1.0, flour = 2.75, fraction, cookiesRec = 48, cookies;
+	
+	cout << "How many cookies do you want to make?\n";
+	cin >> cookies;
+	
+	fraction = cookies / cookiesRec;
+	
+	cout << "Sugar needed: " << fraction * sugar << endl;
+	cout << "Butter needed: " << fraction * butter << endl;
+	cout << "Flour needed: " << fraction * flour << endl;
+	
+	return 0;
+}

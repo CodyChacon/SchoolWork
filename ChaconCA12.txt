@@ -1,0 +1,153 @@
+//Problem 1
+Module Main()
+	Declare Float a
+	Declare InputFile myfile
+	
+	Open myfile "numbers.dat"
+	
+	While NOT eof(myfile)
+		Read myfile a
+		Display a
+	End While
+	
+	Close myfile
+End Module
+
+//Problem 3
+Module Main()
+	Declare Float a
+	Declare Double total
+	Declare InputFile myfile
+	
+	Open myfile "numbers.dat"
+	
+	While NOT eof(myfile)
+		Read myfile a
+		Display a
+		Assign total = total + a
+	End While
+	
+	Close myfile
+	
+	Display total
+End Module
+
+//Problem 6 Part 1
+Module Main()
+	Declare String temp
+	Declare Integer tempnum
+	Declare OutputFile myfile
+	
+	Open myfile "golf.dat"
+	
+	While temp != "quit"
+		Display "Please enter a player name."
+		Input Temp
+		
+		Write myfile temp
+		
+		For i = 1 to i = 18
+			Display "Enter score for hole #" & i
+			Input tempnum
+			
+			Write myfile tempnum
+		End For
+	End While
+		
+	Close myfile
+End Module
+
+// Problem 6 Part 2
+Module Main()
+	Declare String temp
+	Declare Integer tempnum
+	Declare InputFile myfile
+	
+	Open myfile "golf.dat"
+	
+	While NOT eof(myfile)
+		Read myfile temp
+		Display temp
+		
+		For i = 0 to i = 18
+			Read myfile tempnum
+			Display tempnum
+		End For
+	End While
+	
+	Close myfile
+End Module
+
+Module Main()
+	Declare Integer month, day, year, lowM, lowD, lowY, highM, highD, highY
+	Declare Real average, lowest, highest
+
+	Declare InputFile myfile
+	
+	Open myfile "weeklyAverage.dat"
+	Read myfile month, day, year, average
+	
+	Assign lowest = average, highest = average
+	Assign lowM = month
+	Assign lowD = day
+	Assign lowY = year
+	Assign highM = month
+	Assign highD = day
+	Assign highY = year
+	
+	while NOT eof(myfile)
+		Read myfile month, day, year, average
+		
+		If lowest > average
+			Assign lowest = average
+			Assign lowM = month
+			Assign lowD = day
+			Assign lowY = year
+		End if
+		
+		If highest < average
+			Assign highest = average
+			Assign highM = month
+			Assign highD = day
+			Assign highY = year
+		End if
+	End While
+	
+	Close myfile
+	
+	Display "The lowest cost was $" & average & " on " & lowM & "/" & lowD & "/" & lowY
+	Display "The highest cost was $" & average & " on " & highM & "/" & highD & "/" & highY
+		
+End Module	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

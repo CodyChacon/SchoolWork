@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	double oneAcre = 43560, sqrFt, totalAcres;
+	
+	cout << "Please enter the amount of square feet your land has.\n";
+	cin >> sqrFt;
+	
+	totalAcres = sqrFt / oneAcre;
+	
+	cout << "The total number of acres in your plot of land is: " totalAcres;
+	
+	return 0;
+}

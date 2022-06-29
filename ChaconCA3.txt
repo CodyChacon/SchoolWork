@@ -1,0 +1,64 @@
+Main
+
+Declare Integer month
+Declare Integer day
+Declare Integer year
+
+Output "Please enter a month, a day, and a two digit year in that order."
+Input month
+Input day
+Input year
+
+If (month * day == year){
+	Output "This day is magic!"
+} else {
+	Output "This day is not magic."
+}
+
+End
+
+Main
+
+Declare Integer books
+Declare Integer points
+
+Output "How many books have you read this month?"
+Input books
+
+If (books == 0){
+	Assign points = 0;
+} else If (books == 1){
+	Assign points = 5;
+} else If (books == 2){
+	Assign points = 15;
+} else If (books == 3){
+	Assign points = 30;
+} else {
+	Assign points = 60;
+}
+
+Output "You have earned " & points & " points this month!"
+
+End
+
+Main
+
+Declare Real weight
+Declare Real charge
+
+Output "Please enter the weight of your package."
+Input weight
+
+If (weight <= 2){
+	Assign charge = weight * 1.1
+} else If (weight <= 2){
+	Assign charge = weight * 2.2
+} else If (weight <= 2){
+	Assign charge = weight * 3.7
+} else {
+	Assign charge = weight * 3.8
+}
+
+Output "This package will cost " & charge & "$ to ship."
+
+End
