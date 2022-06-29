@@ -1,0 +1,82 @@
+#include <iostream>
+
+using namespace std;
+
+struct item{
+	char description[100];
+	int ID;
+	int quantity;
+	float wholesale;
+	float retail;
+};
+
+void createRecords(){
+	item temp;
+
+	ofstream file;	
+	file.open("inventory.dat");
+	
+	if(file.is_open(){
+		cout << "What is the description of the item?\n";
+		cin >> temp.description;
+		file << temp.description;
+		
+		cout << "What is the item ID?\n";
+		cin >> temp.ID;
+		file << temp.ID;
+		
+		cout << "How much of the item do you currently have in stock?\n";
+		cin >> temp.quantity;
+		file << temp.quantity;
+		
+		cout << "What is the item's wholesale cost?\n";
+		cin >> temp.wholesale;
+		file << temp.wholesale;
+		
+		cout << "What is the item's retail cost?\n";
+		cin >> temp.retail;
+		file << temp.retail;
+	}
+}
+
+void addRecords(){
+	item temp;
+
+	ofstream file;	
+	file.open("inventory.dat", ios::out | ios::app | ios::binary);
+	
+	if(file.is_open(){
+		
+	}
+}
+
+void displayRecords(){
+	item temp;
+
+	ifstream file;	
+	file.open("inventory.dat", ios::in);
+	
+	if(file.is_open(){
+		
+	}
+}
+
+int main(){
+	int choice = 0;
+	while(choice != -1){
+		cout << "Press 1 if you'd like to create a new inventory/overwrite the previous one.\n";
+		cout << "Press 2 if you'd like to add to an already made inventory.\n";
+		cout << "Press 3 if you'd like to view products in an already made inventory.\n";
+		cout << "Press -1 to quit.\n";
+		cin >> choice;
+		
+		if(choice == 1){
+			createRecords();
+		} else if(choice == 2){
+			addRecords();
+		} else if(choice == 3){
+			displayRecords();
+		}
+	}
+	return 0;
+}

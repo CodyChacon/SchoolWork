@@ -1,0 +1,88 @@
+#include <iostream>
+
+using namespace std;
+
+#include "vehicleClass.h"
+
+int main(){
+	int vehicles, check;
+	bool tempBool = false;
+	int tempInt;
+	float tempFloat;
+	string tempStr;
+
+	cout << "How many vehicles would you like to input(max of 20)?\n";
+	cin >> vehicles;
+
+	while(vehicles > 20 or vehicles < 1){
+		cout << "How many vehicles would you like to input(max of 20)?\n";
+		cin >> vehicles;
+	}
+	vehicle set1[vehicles];
+
+	for(int i = 0; i < vehicles; i++){
+		cout << "This information relates to car #" << i + 1 << "\n\n";
+	
+			while(!tempBool){
+				cout << "What is your car model? (type 'quit' now to exit early)\n";
+				cin.ignore();
+				getline(cin, tempStr);
+				if(tempStr != "quit"){
+					tempBool = set1[i].setMod(tempStr);
+				} else {
+					tempBool = true;
+				}
+			}
+			tempBool = false;
+			
+		if(tempStr != "quit"){
+			while (!tempBool){
+				cout << "Who is your car manufacturer?\n";
+				getline(cin, tempStr);
+				tempBool = set1[i].setMan(tempStr);
+			}
+			tempBool = false;
+
+			while (!tempBool){
+				cout << "How many cylinders does your car have?\n";
+				cin >> tempInt;
+				tempBool = set1[i].setCyl(tempInt);
+			}
+			tempBool = false;
+			
+			while (!tempBool){
+				cout << "Whats the engine number? (honestly not sure what this even is lol)\n";
+				cin >> tempFloat;
+				tempBool = set1[i].setEng(tempFloat);
+			}
+			tempBool = false;
+			
+			while (!tempBool){
+				cout << "What is the cars cost?\n";
+				cin >> tempFloat;
+				tempBool = set1[i].setCost(tempFloat);
+			}
+			tempBool = false;
+		}
+	}
+	
+	cout << "Thanks for inputting all of your car information!\n";
+	while(check != 0){
+		do{
+			cout << "Enter the vehicle number you'd like information for! (put 0 to quit).\n";
+			cin >> check;
+		} while (check > vehicles || check < 0);
+		
+		cout << "Model: " << set1[check - 1].getMod() << endl;
+
+		cout << "Manufacturer: " << set1[check - 1].getMan() << endl;
+
+		cout << "Cylinders: " << set1[check - 1].getCyl() << endl;
+
+		cout << "Engine: " << set1[check - 1].getEng() << endl;
+
+		cout << "Cost: $" << set1[check - 1].getCost() << endl;
+	}
+	
+	cout << "Goodbye!\n";
+}
